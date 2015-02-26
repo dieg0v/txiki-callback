@@ -4,7 +4,7 @@ Simple callback manager for PHP
 
 [![Author](http://img.shields.io/badge/author-@dieg0v-blue.svg?style=flat-square)](https://twitter.com/dieg0v)
 [![Latest Version](https://img.shields.io/github/release/dieg0v/txiki-callback.svg?style=flat-square)](https://github.com/dieg0v/txiki-callback/releases)
-[![Packagist Version](https://img.shields.io/packagist/v/txiki/txiki-callback.svg?style=flat-square)](https://packagist.org/packages/txiki/txiki-callback)
+[![Packagist Version](https://img.shields.io/packagist/v/txiki/txiki-callback.svg?style=flat-square)](https://packagist.org/packages/txiki/callback)
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/dieg0v/txiki-callback/master.svg?style=flat-square)](https://travis-ci.org/dieg0v/txiki-callback)
