@@ -47,17 +47,45 @@ $cObject = new CallableObject( 'DummyClass::myMethod' , ['foor', 'bar']);
 
 // return 'Out foo - bar';
 echo $result = Call::dispatch($cObject);
-
+```
+```php
 $a = 'extra';
-$cObject = new CallableObject( 
-	function($foo, $bar) use ($a) { 
-		return 'Out '.$foo.' - '.$bar.' - '.$a; 
-	} , 
+$cObject = new CallableObject(
+	function($foo, $bar) use ($a) {
+		return 'Out '.$foo.' - '.$bar.' - '.$a;
+	} ,
 	['foor', 'bar']
 );
 
 // return 'Out foor - bar - extra';
 echo $result = Call::dispatch($cObject);
+```
+
+Implements ICallable interface to convert your own object on a CallableObject:
+```php
+use Txiki\Callback\ICallable;
+
+class MyObject implements ICallable
+{
+    public function myMethod()
+    {
+    }
+
+    public function getCallable()
+    {
+        return function($id){
+            echo 'ok '.$id;
+        };
+    }
+
+    public function getParams()
+    {
+        return [999];
+    }
+}
+
+// return 'ok 999'
+echo Call::dispatch(new MyObject());
 ```
 
 ## Testing
