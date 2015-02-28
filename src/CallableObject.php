@@ -31,27 +31,27 @@ class CallableObject implements ICallable
      */
     public function __construct($callable, $params = [])
     {
-    	$this->callable = $callable;
-    	$this->params = $params;
+        $this->callable = $callable;
+        $this->params = $params;
     }
 
     /**
      * Get callback
-     * 
+     *
      * @return \Clousure
      */
     public function getCallable()
     {
-    	return $this->callable;
+        return $this->callable;
     }
 
     /**
      * Get params
-     * 
+     *
      * @return array
      */
     public function getParams()
     {
-    	return $this->params;
+        return $this->params;
     }
 }

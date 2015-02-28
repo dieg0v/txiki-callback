@@ -17,15 +17,15 @@ class CallTest extends \PHPUnit_Framework_TestCase
      */
     public function testCall()
     {
-        $c = new CallableObject( function(){return 'ok';}, []);
+        $c = new CallableObject(function () {return 'ok';}, []);
         $result = Call::dispatch($c);
         $this->assertEquals($result, 'ok');
 
-        $c = new CallableObject( 'Txiki\Callback\Tests\DummyClass::method1' , [1,'test']);
+        $c = new CallableObject('Txiki\Callback\Tests\DummyClass::method1', [1, 'test']);
         $result = Call::dispatch($c);
         $this->assertEquals($result, 'Hello world 1 test');
 
-        $c = new CallableObject( 'Txiki\Callback\Tests\DummyClass::method2' , ['test', 1]);
+        $c = new CallableObject('Txiki\Callback\Tests\DummyClass::method2', ['test', 1]);
         $result = Call::dispatch($c);
         $this->assertEquals($result, 'Hello world test 1');
     }
@@ -37,10 +37,9 @@ class CallTest extends \PHPUnit_Framework_TestCase
      */
     public function testCallException()
     {
-        $this->setExpectedException('Txiki\Callback\CallException','Non callable object found',0);
+        $this->setExpectedException('Txiki\Callback\CallException', 'Non callable object found', 0);
 
-        $c = new CallableObject( 'fail', []);
+        $c = new CallableObject('fail', []);
         $result = Call::dispatch($c);
-
     }
 }
